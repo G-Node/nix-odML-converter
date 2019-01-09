@@ -20,7 +20,7 @@ CLASSIFIERS = infodict["CLASSIFIERS"]
 
 packages = ['nixodmlconverter']
 
-with open('README.md') as f:
+with open('README.md', encoding="utf8") as f:
     description_text = f.read()
 
 install_req = ["odML", "nixio>=1.5.0b1"]
