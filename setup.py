@@ -1,6 +1,6 @@
 import json
 import sys
-
+from io import open
 try:
     from setuptools import setup
 except ImportError as ex:
