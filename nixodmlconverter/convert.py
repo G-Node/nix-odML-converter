@@ -1,6 +1,8 @@
 import os
 import sys
 
+import argparse
+
 import nixio as nix
 import odml
 
@@ -241,14 +243,10 @@ def convert(filename, mode='append'):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) <=1 :
-        print("Argument missing\nUsage: convert FILE [FILENAMES]")
-    else:
-        if(sys.argv[1] == '/h' or sys.argv[1] == '/help' or sys.argv[1] == '--help'):
-            print("Usage: convert FILE [FILENAMES]\n\nConverts odML to NIX file or extracts odML from NIX file, also upgrades odML to newest version\nArguments:\n\tFILE\tfile name of NIX or odML file\n\tFILES\tmore files for conversion")
-        else:
-            files = sys.argv[1:]
-            for f in files:
-                convert(f)
-
-            print_info()
+    parser = argparse.ArgumentParser(description='Converts odML to NIX file or extracts odML from NIX file, also upgrades odML to newest version\n')
+    parser.add_argument('files', metavar='FILE',type=str,nargs='+', help='file name of NIX or odML file')
+    args = parser.parse_args()
+    print(args.files)
+    for f in args.files:
+        convert(f)
+    print_info()
