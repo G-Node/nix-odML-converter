@@ -2,6 +2,11 @@ version: 1.4.{build}
 
 image: Visual Studio 2017
 
+branches:
+  only:
+    - master
+    - dev
+
 environment:
   matrix:
     - PYTHON: "C:\\Python36"
