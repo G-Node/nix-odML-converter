@@ -26,9 +26,10 @@ init:
 
 build: false
 
+# setuptools and wheels are required for the 64 bit hdf5 installation
 install:
-  - python -m pip install --upgrade pip
-  - python -m pip install numpy h5py odml nixio
+  - python -m pip install --upgrade pip setuptools wheel
+  - python -m pip install odml nixio
 
 test_script:
   - python --version
