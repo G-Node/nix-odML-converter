@@ -1,4 +1,4 @@
-[![Travis build](https://travis-ci.org/G-Node/nix-odML-converter.svg?branch=master)](https://travis-ci.org/G-Node/nix-odML-converter/)
+[![gh actions tests](https://github.com/G-Node/nix-odML-converter/workflows/run-tests/badge.svg?branch=master)](https://github.com/G-Node/nix-odML-converter/actions)
 [![Build status](https://ci.appveyor.com/api/projects/status/fc30meltvawsbpgt?svg=true)](https://ci.appveyor.com/project/G-Node/nix-odml-converter)
 [![PyPI version](https://img.shields.io/pypi/v/nixodmlconverter.svg)](https://pypi.org/project/nixodmlconverter/)
 

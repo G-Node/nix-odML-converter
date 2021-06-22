@@ -2,17 +2,13 @@ version: 1.4.{build}
 
 image: Visual Studio 2017
 
+branches:
+  only:
+    - master
+    - dev
+
 environment:
   matrix:
-    - PYTHON: "C:\\Python36"
-      PYVER: 3
-      BITS: 32
-    - PYTHON: "C:\\Python37"
-      PYVER: 3
-      BITS: 32
-    - PYTHON: "C:\\Python38"
-      PYVER: 3
-      BITS: 32
     - PYTHON: "C:\\Python36-x64"
       PYVER: 3
       BITS: 64
@@ -30,9 +26,12 @@ init:
 
 build: false
 
+# setuptools and wheels are required for the 64 bit hdf5 installation
 install:
-  - python -m pip install odml nixio>=1.5.0b1
+  - python -m pip install --upgrade pip setuptools wheel
+  - python -m pip install odml nixio pytest
 
 test_script:
   - python --version
-  - python setup.py test
+  - python setup.py install
+  - python -m pytest -v
